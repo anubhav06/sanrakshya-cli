@@ -83,7 +83,6 @@ func Packages(app clio.Application) *cobra.Command {
 			"command": "packages",
 		}),
 		Args:    validatePackagesArgs,
-		PreRunE: applicationUpdateCheck(id, &opts.UpdateCheck),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			// restoreStdout := ui.CaptureStdoutToTraceLog()
 			// defer restoreStdout()
