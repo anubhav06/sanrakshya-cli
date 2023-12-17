@@ -87,6 +87,7 @@ func create(id clio.Identification, out io.Writer) (clio.Application, *cobra.Com
 		packagesCmd,
 		commands.Attest(app),
 		commands.Convert(app),
+		commands.Submit(app),
 		clio.VersionCommand(id),
 		cranecmd.NewCmdAuthLogin(id.Name), // syft login uses the same command as crane
 	)
