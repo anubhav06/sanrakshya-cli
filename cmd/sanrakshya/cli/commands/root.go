@@ -12,7 +12,7 @@ import (
 const (
 	rootLong = `
 	Sanrakshya is a CLI tool for generating SBOMs from container images and filesystems.
-	Made with 💖 by Team PiedPiper & developed indigeniously made in India.
+	Made with 💖 by Team PiedPiper & developed indigeniously in India.
 	`
 )
 
