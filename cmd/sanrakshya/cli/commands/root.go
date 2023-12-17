@@ -8,6 +8,14 @@ import (
 	"github.com/anchore/clio"
 )
 
+
+const (
+	rootLong = `
+	Sanrakshya is a CLI tool for generating SBOMs from container images and filesystems.
+	Made with 💖 by Team PiedPiper & developed indigeniously made in India.
+	`
+)
+
 func Root(app clio.Application, packagesCmd *cobra.Command) *cobra.Command {
 	id := app.ID()
 
@@ -15,10 +23,9 @@ func Root(app clio.Application, packagesCmd *cobra.Command) *cobra.Command {
 
 	return app.SetupRootCommand(&cobra.Command{
 		Use:     fmt.Sprintf("%s [SOURCE]", app.ID().Name),
-		Short:   packagesCmd.Short,
-		Long:    packagesCmd.Long,
+		Short:   "Sanrakshya is a CLI tool for generating SBOMs from container images and filesystems",
+		Long:    rootLong,
 		Args:    packagesCmd.Args,
-		Example: packagesCmd.Example,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			// restoreStdout := ui.CaptureStdoutToTraceLog()
 			// defer restoreStdout()

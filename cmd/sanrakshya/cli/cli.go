@@ -36,7 +36,6 @@ func create(id clio.Identification, out io.Writer) (clio.Application, *cobra.Com
 	clioCfg := clio.NewSetupConfig(id).
 		WithGlobalConfigFlag().   // add persistent -c <path> for reading an application config from
 		WithGlobalLoggingFlags(). // add persistent -v and -q flags tied to the logging config
-		WithConfigInRootHelp().   // --help on the root command renders the full application config in the help text
 		WithUIConstructor(
 			// select a UI based on the logging configuration and state of stdin (if stdin is a tty)
 			func(cfg clio.Config) ([]clio.UI, error) {

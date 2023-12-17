@@ -21,36 +21,13 @@ import (
 
 const (
 	packagesExample = `  {{.appName}} {{.command}} alpine:latest                                a summary of discovered packages
-  {{.appName}} {{.command}} alpine:latest -o json                        show all possible cataloging details
-  {{.appName}} {{.command}} alpine:latest -o cyclonedx                   show a CycloneDX formatted SBOM
-  {{.appName}} {{.command}} alpine:latest -o cyclonedx-json              show a CycloneDX JSON formatted SBOM
-  {{.appName}} {{.command}} alpine:latest -o spdx                        show a SPDX 2.3 Tag-Value formatted SBOM
-  {{.appName}} {{.command}} alpine:latest -o spdx@2.2                    show a SPDX 2.2 Tag-Value formatted SBOM
   {{.appName}} {{.command}} alpine:latest -o spdx-json                   show a SPDX 2.3 JSON formatted SBOM
-  {{.appName}} {{.command}} alpine:latest -o spdx-json@2.2               show a SPDX 2.2 JSON formatted SBOM
-  {{.appName}} {{.command}} alpine:latest -vv                            show verbose debug information
-  {{.appName}} {{.command}} alpine:latest -o template -t my_format.tmpl  show a SBOM formatted according to given template file
 
   Supports the following image sources:
-    {{.appName}} {{.command}} yourrepo/yourimage:tag     defaults to using images from a Docker daemon. If Docker is not present, the image is pulled directly from the registry.
-    {{.appName}} {{.command}} path/to/a/file/or/dir      a Docker tar, OCI tar, OCI directory, SIF container, or generic filesystem directory
+    {{.appName}} {{.command}} yourrepo/yourimage:tag     defaults to using images from a Docker daemon, otherwise registry.
+    {{.appName}} {{.command}} path/to/a/file/or/dir      any local filesystem path (directory or file)
 `
-
-	schemeHelpHeader = "You can also explicitly specify the scheme to use:"
-	imageSchemeHelp  = `    {{.appName}} {{.command}} docker:yourrepo/yourimage:tag            explicitly use the Docker daemon
-    {{.appName}} {{.command}} podman:yourrepo/yourimage:tag            explicitly use the Podman daemon
-    {{.appName}} {{.command}} registry:yourrepo/yourimage:tag          pull image directly from a registry (no container runtime required)
-    {{.appName}} {{.command}} docker-archive:path/to/yourimage.tar     use a tarball from disk for archives created from "docker save"
-    {{.appName}} {{.command}} oci-archive:path/to/yourimage.tar        use a tarball from disk for OCI archives (from Skopeo or otherwise)
-    {{.appName}} {{.command}} oci-dir:path/to/yourimage                read directly from a path on disk for OCI layout directories (from Skopeo or otherwise)
-    {{.appName}} {{.command}} singularity:path/to/yourimage.sif        read directly from a Singularity Image Format (SIF) container on disk
-`
-	nonImageSchemeHelp = `    {{.appName}} {{.command}} dir:path/to/yourproject                  read directly from a path on disk (any directory)
-    {{.appName}} {{.command}} file:path/to/yourproject/file            read directly from a path on disk (any single file)
-`
-	packagesSchemeHelp = "\n  " + schemeHelpHeader + "\n" + imageSchemeHelp + nonImageSchemeHelp
-
-	packagesHelp = packagesExample + packagesSchemeHelp
+	packagesHelp = packagesExample
 )
 
 type packagesOptions struct {
