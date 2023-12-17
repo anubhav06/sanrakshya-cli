@@ -5,9 +5,9 @@ import (
 
 	"github.com/google/licensecheck"
 
-	"github.com/anubhav06/sanrakshya-cli/syft/file"
-	"github.com/anubhav06/sanrakshya-cli/syft/license"
-	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/sanrakshya/file"
+	"github.com/anubhav06/sanrakshya-cli/sanrakshya/license"
+	"github.com/anubhav06/sanrakshya-cli/sanrakshya/pkg"
 )
 
 const (

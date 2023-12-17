@@ -7,7 +7,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/sanrakshya/file"
 )
 
 func supportedHashAlgorithms() []crypto.Hash {

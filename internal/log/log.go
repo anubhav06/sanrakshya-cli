@@ -1,5 +1,5 @@
 /*
-Package log contains the singleton object and helper functions for facilitating logging within the syft library.
+Package log contains the singleton object and helper functions for facilitating logging within the sanrakshya library.
 */
 package log
 

@@ -1,12 +1,12 @@
 # JSON Schema
 
-This is the JSON schema for output from the JSON presenters (`syft packages <img> -o json`). The required inputs for defining the JSON schema are as follows:
+This is the JSON schema for output from the JSON presenters (`sanrakshya packages <img> -o json`). The required inputs for defining the JSON schema are as follows:
 
 - the value of `internal.JSONSchemaVersion` that governs the schema filename
-- the `Document` struct definition within `github.com/anubhav06/sanrakshya-cli/syft/formats/syftjson/model/document.go` that governs the overall document shape
-- generated `AllTypes()` helper function within the `syft/internal/sourcemetadata` and `syft/internal/packagemetadata` packages
+- the `Document` struct definition within `github.com/anubhav06/sanrakshya-cli/sanrakshya/formats/sanrakshyajson/model/document.go` that governs the overall document shape
+- generated `AllTypes()` helper function within the `sanrakshya/internal/sourcemetadata` and `sanrakshya/internal/packagemetadata` packages
 
-With regard to testing the JSON schema, integration test cases provided by the developer are used as examples to validate that JSON output from Syft is always valid relative to the `schema/json/schema-$VERSION.json` file.
+With regard to testing the JSON schema, integration test cases provided by the developer are used as examples to validate that JSON output from sanrakshya is always valid relative to the `schema/json/schema-$VERSION.json` file.
 
 ## Versioning
 

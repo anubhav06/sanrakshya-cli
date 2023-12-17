@@ -72,7 +72,7 @@ func assertNoError(t testing.TB, fn func() error) func() {
 func setupZipFileTest(t testing.TB, sourceDirPath string, zip64 bool) string {
 	t.Helper()
 
-	archivePrefix := path.Join(t.TempDir(), "syft-ziputil-archive-TEST-")
+	archivePrefix := path.Join(t.TempDir(), "sanrakshya-ziputil-archive-TEST-")
 	destinationArchiveFilePath := archivePrefix + ".zip"
 	t.Logf("archive path: %s", destinationArchiveFilePath)
 	createZipArchive(t, sourceDirPath, destinationArchiveFilePath, zip64)

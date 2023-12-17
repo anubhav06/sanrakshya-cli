@@ -6,8 +6,8 @@ import (
 
 	"github.com/anchore/clio"
 	"github.com/anubhav06/sanrakshya-cli/internal/redact"
-	"github.com/anubhav06/sanrakshya-cli/syft/event"
-	"github.com/anubhav06/sanrakshya-cli/syft/event/monitor"
+	"github.com/anubhav06/sanrakshya-cli/sanrakshya/event"
+	"github.com/anubhav06/sanrakshya-cli/sanrakshya/event/monitor"
 )
 
 func Exit() {
