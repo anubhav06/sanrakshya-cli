@@ -3,7 +3,7 @@ package fileresolver
 import (
 	"io"
 
-	"github.com/anchore/syft/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
 )
 
 var _ file.WritableResolver = (*Empty)(nil)

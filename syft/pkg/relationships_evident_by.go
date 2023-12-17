@@ -1,7 +1,7 @@
 package pkg
 
 import (
-	"github.com/anchore/syft/syft/artifact"
+	"github.com/anubhav06/sanrakshya-cli/syft/artifact"
 )
 
 func RelationshipsEvidentBy(catalog *Collection) []artifact.Relationship {

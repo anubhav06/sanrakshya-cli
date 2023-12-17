@@ -10,10 +10,10 @@ import (
 
 	"github.com/anchore/stereoscope"
 	"github.com/anchore/stereoscope/pkg/image"
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/artifact"
-	"github.com/anchore/syft/syft/file"
-	"github.com/anchore/syft/syft/internal/fileresolver"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/artifact"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/internal/fileresolver"
 )
 
 var _ Source = (*StereoscopeImageSource)(nil)

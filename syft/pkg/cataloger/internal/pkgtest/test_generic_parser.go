@@ -14,12 +14,12 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/anchore/stereoscope/pkg/imagetest"
-	"github.com/anchore/syft/syft/artifact"
-	"github.com/anchore/syft/syft/file"
-	"github.com/anchore/syft/syft/linux"
-	"github.com/anchore/syft/syft/pkg"
-	"github.com/anchore/syft/syft/pkg/cataloger/generic"
-	"github.com/anchore/syft/syft/source"
+	"github.com/anubhav06/sanrakshya-cli/syft/artifact"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/linux"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/generic"
+	"github.com/anubhav06/sanrakshya-cli/syft/source"
 )
 
 type locationComparer func(x, y file.Location) bool

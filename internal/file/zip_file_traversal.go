@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/anchore/syft/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
 )
 
 const (

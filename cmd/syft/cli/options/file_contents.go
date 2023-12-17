@@ -1,8 +1,8 @@
 package options
 
 import (
-	"github.com/anchore/syft/internal/file"
-	"github.com/anchore/syft/syft/source"
+	"github.com/anubhav06/sanrakshya-cli/internal/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/source"
 )
 
 type fileContents struct {

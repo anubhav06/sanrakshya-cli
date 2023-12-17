@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/anchore/syft/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
 )
 
 // FieldName return a flag to indicate this is a valid field and a name to use

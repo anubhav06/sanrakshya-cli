@@ -9,11 +9,11 @@ import (
 
 	"github.com/mitchellh/mapstructure"
 
-	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/syft/artifact"
-	"github.com/anchore/syft/syft/file"
-	"github.com/anchore/syft/syft/pkg"
-	"github.com/anchore/syft/syft/pkg/cataloger/generic"
+	"github.com/anubhav06/sanrakshya-cli/internal"
+	"github.com/anubhav06/sanrakshya-cli/syft/artifact"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/generic"
 )
 
 var _ generic.Parser = parseGemFileLockEntries
@@ -36,7 +36,7 @@ var patterns = map[string]*regexp.Regexp{
 	"version": regexp.MustCompile(`.*\.version\s*=\s*["']{1}(?P<version>.*)["']{1} *`),
 
 	// match example:
-	// homepage = "https://github.com/anchore/syft".freeze   --->   https://github.com/anchore/syft
+	// homepage = "https://github.com/anubhav06/sanrakshya-cli".freeze   --->   https://github.com/anubhav06/sanrakshya-cli
 	"homepage": regexp.MustCompile(`.*\.homepage\s*=\s*["']{1}(?P<homepage>.*)["']{1} *`),
 
 	// match example:       files = ["exe/bundle".freeze, "exe/bundler".freeze]    --->    "exe/bundle".freeze, "exe/bundler".freeze

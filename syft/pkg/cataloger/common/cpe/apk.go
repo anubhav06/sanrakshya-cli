@@ -5,8 +5,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/internal"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
 )
 
 var (

@@ -13,7 +13,7 @@ import (
 	"github.com/anchore/bubbly/bubbles/taskprogress"
 	stereoscopeParsers "github.com/anchore/stereoscope/pkg/event/parsers"
 	"github.com/anchore/stereoscope/pkg/image/docker"
-	"github.com/anchore/syft/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
 )
 
 var _ interface {

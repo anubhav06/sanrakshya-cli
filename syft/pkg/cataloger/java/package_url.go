@@ -4,8 +4,8 @@ import (
 	"strings"
 
 	"github.com/anchore/packageurl-go"
-	"github.com/anchore/syft/syft/pkg"
-	"github.com/anchore/syft/syft/pkg/cataloger/common/cpe"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/common/cpe"
 )
 
 // PackageURL returns the PURL for the specific java package (see https://github.com/package-url/purl-spec)

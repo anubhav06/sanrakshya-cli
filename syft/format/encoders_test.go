@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 func Test_versionMatches(t *testing.T) {

@@ -2,7 +2,7 @@
 
 package sourcemetadata
 
-import "github.com/anchore/syft/syft/source"
+import "github.com/anubhav06/sanrakshya-cli/syft/source"
 
 // AllTypes returns a list of all source metadata types that syft supports (that are represented in the source.Description.Metadata field).
 func AllTypes() []any {

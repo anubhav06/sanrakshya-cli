@@ -19,7 +19,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	stereoscopeFile "github.com/anchore/stereoscope/pkg/file"
-	"github.com/anchore/syft/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
 )
 
 func Test_UnindexDirectoryResolver_RequestRelativePathWithinSymlink(t *testing.T) {

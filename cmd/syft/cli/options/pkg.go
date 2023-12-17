@@ -1,7 +1,7 @@
 package options
 
 import (
-	"github.com/anchore/syft/syft/pkg/cataloger"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger"
 )
 
 type pkg struct {

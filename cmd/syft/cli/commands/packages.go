@@ -8,15 +8,15 @@ import (
 
 	"github.com/anchore/clio"
 	"github.com/anchore/stereoscope/pkg/image"
-	"github.com/anchore/syft/cmd/syft/cli/eventloop"
-	"github.com/anchore/syft/cmd/syft/cli/options"
-	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/bus"
-	"github.com/anchore/syft/internal/file"
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/artifact"
-	"github.com/anchore/syft/syft/sbom"
-	"github.com/anchore/syft/syft/source"
+	"github.com/anubhav06/sanrakshya-cli/cmd/syft/cli/eventloop"
+	"github.com/anubhav06/sanrakshya-cli/cmd/syft/cli/options"
+	"github.com/anubhav06/sanrakshya-cli/internal"
+	"github.com/anubhav06/sanrakshya-cli/internal/bus"
+	"github.com/anubhav06/sanrakshya-cli/internal/file"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/artifact"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/source"
 )
 
 const (
@@ -82,7 +82,7 @@ func Packages(app clio.Application) *cobra.Command {
 			"appName": id.Name,
 			"command": "packages",
 		}),
-		Args:    validatePackagesArgs,
+		Args: validatePackagesArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			// restoreStdout := ui.CaptureStdoutToTraceLog()
 			// defer restoreStdout()

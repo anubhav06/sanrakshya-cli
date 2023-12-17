@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/anchore/packageurl-go"
-	"github.com/anchore/syft/syft/file"
-	"github.com/anchore/syft/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
 )
 
 func newDotnetDepsPackage(nameVersion string, lib dotnetDepsLibrary, locations ...file.Location) *pkg.Package {
@@ -65,7 +65,7 @@ func packageURL(m pkg.DotnetDepsEntry) string {
 		// https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst
 		// Some history:
 		//   https://github.com/anchore/packageurl-go/pull/8 added the type to Anchore's fork
-		//   due to this PR: https://github.com/anchore/syft/pull/951
+		//   due to this PR: https://github.com/anubhav06/sanrakshya-cli/pull/951
 		// There were questions about "dotnet" being the right purlType at the time, but it was
 		// acknowledged that scanning a dotnet file does not necessarily mean the packages found
 		// are nuget packages and so the alternate type was added. Since this is still an invalid

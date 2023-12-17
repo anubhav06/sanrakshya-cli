@@ -12,20 +12,20 @@ import (
 	"github.com/wagoodman/go-progress"
 
 	"github.com/anchore/clio"
-	"github.com/anchore/syft/cmd/syft/cli/options"
-	"github.com/anchore/syft/cmd/syft/internal/ui"
-	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/bus"
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/event"
-	"github.com/anchore/syft/syft/event/monitor"
-	"github.com/anchore/syft/syft/format"
-	"github.com/anchore/syft/syft/format/cyclonedxjson"
-	"github.com/anchore/syft/syft/format/spdxjson"
-	"github.com/anchore/syft/syft/format/spdxtagvalue"
-	"github.com/anchore/syft/syft/format/syftjson"
-	"github.com/anchore/syft/syft/sbom"
-	"github.com/anchore/syft/syft/source"
+	"github.com/anubhav06/sanrakshya-cli/cmd/syft/cli/options"
+	"github.com/anubhav06/sanrakshya-cli/cmd/syft/internal/ui"
+	"github.com/anubhav06/sanrakshya-cli/internal"
+	"github.com/anubhav06/sanrakshya-cli/internal/bus"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/event"
+	"github.com/anubhav06/sanrakshya-cli/syft/event/monitor"
+	"github.com/anubhav06/sanrakshya-cli/syft/format"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/cyclonedxjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/spdxjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/spdxtagvalue"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/syftjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/source"
 )
 
 const (
@@ -60,7 +60,7 @@ func Attest(app clio.Application) *cobra.Command {
 			"appName": id.Name,
 			"command": "attest",
 		}),
-		Args:    validatePackagesArgs,
+		Args: validatePackagesArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			restoreStdout := ui.CaptureStdoutToTraceLog()
 			defer restoreStdout()

@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/anchore/syft/syft/format/cyclonedxjson"
-	"github.com/anchore/syft/syft/format/cyclonedxxml"
-	"github.com/anchore/syft/syft/format/spdxjson"
-	"github.com/anchore/syft/syft/format/spdxtagvalue"
-	"github.com/anchore/syft/syft/format/syftjson"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/cyclonedxjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/cyclonedxxml"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/spdxjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/spdxtagvalue"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/syftjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 var (

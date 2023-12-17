@@ -1,7 +1,7 @@
 package spdxutil
 
 import (
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 const DefaultVersion = "2.3"

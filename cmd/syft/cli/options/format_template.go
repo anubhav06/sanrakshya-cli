@@ -2,8 +2,8 @@ package options
 
 import (
 	"github.com/anchore/clio"
-	"github.com/anchore/syft/syft/format/template"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/template"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 var _ clio.FlagAdder = (*FormatTemplate)(nil)

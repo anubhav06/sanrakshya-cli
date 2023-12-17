@@ -1,6 +1,6 @@
 package cpe
 
-import "github.com/anchore/syft/syft/pkg"
+import "github.com/anubhav06/sanrakshya-cli/syft/pkg"
 
 func candidateVendorsForJavascript(p pkg.Package) fieldCandidateSet {
 	if _, ok := p.Metadata.(pkg.NpmPackage); !ok {

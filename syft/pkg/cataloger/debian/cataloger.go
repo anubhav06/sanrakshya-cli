@@ -4,8 +4,8 @@ Package debian provides a concrete Cataloger implementation relating to packages
 package debian
 
 import (
-	"github.com/anchore/syft/syft/pkg"
-	"github.com/anchore/syft/syft/pkg/cataloger/generic"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/generic"
 )
 
 // NewDBCataloger returns a new Deb package cataloger capable of parsing DPKG status DB flat-file stores.

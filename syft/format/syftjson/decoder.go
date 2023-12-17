@@ -8,10 +8,10 @@ import (
 
 	"github.com/Masterminds/semver"
 
-	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/format/syftjson/model"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/internal"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/syftjson/model"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 var _ sbom.FormatDecoder = (*decoder)(nil)

@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/wagoodman/go-partybus"
 
-	"github.com/anchore/syft/syft/event"
-	"github.com/anchore/syft/syft/event/parsers"
+	"github.com/anubhav06/sanrakshya-cli/syft/event"
+	"github.com/anubhav06/sanrakshya-cli/syft/event/parsers"
 )
 
 func Test_writeEvents(t *testing.T) {

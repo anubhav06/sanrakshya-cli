@@ -11,9 +11,9 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/anchore/clio"
-	"github.com/anchore/syft/cmd/syft/cli/options"
-	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/syft/format/syftjson/model"
+	"github.com/anubhav06/sanrakshya-cli/cmd/syft/cli/options"
+	"github.com/anubhav06/sanrakshya-cli/internal"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/syftjson/model"
 )
 
 const (
@@ -111,7 +111,7 @@ func runSubmit(id clio.Identification, opts *submitOptions, userInput string) er
 	if err != nil {
 		return fmt.Errorf("failed to read SBOM file: %w", err)
 	}
-	
+
 	if err := json.Unmarshal(sbomFileContent, &sbom.SBOMFile); err != nil {
 		return fmt.Errorf("failed to marshal SBOM data: %w", err)
 	}

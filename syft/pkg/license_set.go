@@ -6,8 +6,8 @@ import (
 
 	"github.com/mitchellh/hashstructure/v2"
 
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/artifact"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/artifact"
 )
 
 type LicenseSet struct {

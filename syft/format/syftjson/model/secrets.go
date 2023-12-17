@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/anchore/syft/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
 )
 
 type Secrets struct {

@@ -3,7 +3,7 @@ package options
 import (
 	"github.com/anchore/clio"
 	"github.com/anchore/fangs"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 var _ interface {

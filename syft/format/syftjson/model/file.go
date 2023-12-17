@@ -1,8 +1,8 @@
 package model
 
 import (
-	"github.com/anchore/syft/syft/file"
-	"github.com/anchore/syft/syft/license"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/license"
 )
 
 type File struct {

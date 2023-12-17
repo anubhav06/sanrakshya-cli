@@ -1,7 +1,7 @@
 package spdxhelpers
 
 import (
-	"github.com/anchore/syft/syft/source"
+	"github.com/anubhav06/sanrakshya-cli/syft/source"
 )
 
 func DocumentName(src source.Description) string {

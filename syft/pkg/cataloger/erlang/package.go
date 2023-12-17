@@ -2,8 +2,8 @@ package erlang
 
 import (
 	"github.com/anchore/packageurl-go"
-	"github.com/anchore/syft/syft/file"
-	"github.com/anchore/syft/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
 )
 
 func newPackage(d pkg.ErlangRebarLockEntry, locations ...file.Location) pkg.Package {

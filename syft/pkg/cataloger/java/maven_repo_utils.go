@@ -10,7 +10,7 @@ import (
 
 	"github.com/vifraa/gopom"
 
-	"github.com/anchore/syft/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
 )
 
 func formatMavenPomURL(groupID, artifactID, version, mavenBaseURL string) (requestURL string, err error) {

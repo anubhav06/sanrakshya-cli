@@ -1,6 +1,6 @@
 package pkg
 
-import "github.com/anchore/syft/syft/file"
+import "github.com/anubhav06/sanrakshya-cli/syft/file"
 
 // BinarySignature represents a set of matched values within a binary file.
 type BinarySignature struct {

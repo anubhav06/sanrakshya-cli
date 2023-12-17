@@ -4,17 +4,16 @@ import (
 	"io"
 	"os"
 
-	cranecmd "github.com/google/go-containerregistry/cmd/crane/cmd"
 	"github.com/spf13/cobra"
 
 	"github.com/anchore/clio"
 	"github.com/anchore/stereoscope"
-	"github.com/anchore/syft/cmd/syft/cli/commands"
-	handler "github.com/anchore/syft/cmd/syft/cli/ui"
-	"github.com/anchore/syft/cmd/syft/internal/ui"
-	"github.com/anchore/syft/internal/bus"
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/internal/redact"
+	"github.com/anubhav06/sanrakshya-cli/cmd/syft/cli/commands"
+	handler "github.com/anubhav06/sanrakshya-cli/cmd/syft/cli/ui"
+	"github.com/anubhav06/sanrakshya-cli/cmd/syft/internal/ui"
+	"github.com/anubhav06/sanrakshya-cli/internal/bus"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/internal/redact"
 )
 
 // Application constructs the `syft packages` command and aliases the root command to `syft packages`.
@@ -89,7 +88,6 @@ func create(id clio.Identification, out io.Writer) (clio.Application, *cobra.Com
 		// commands.Convert(app),
 		commands.Submit(app),
 		clio.VersionCommand(id),
-		cranecmd.NewCmdAuthLogin(id.Name), // syft login uses the same command as crane
 	)
 
 	// explicitly set Cobra output to the real stdout to write things like errors and help

@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/anchore/syft/syft/internal/sourcemetadata"
-	"github.com/anchore/syft/syft/source"
+	"github.com/anubhav06/sanrakshya-cli/syft/internal/sourcemetadata"
+	"github.com/anubhav06/sanrakshya-cli/syft/source"
 )
 
 // Source object represents the thing that was cataloged

@@ -9,10 +9,10 @@ import (
 
 	"github.com/mitchellh/mapstructure"
 
-	intFile "github.com/anchore/syft/internal/file"
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/file"
-	"github.com/anchore/syft/syft/pkg"
+	intFile "github.com/anubhav06/sanrakshya-cli/internal/file"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
 )
 
 type parsedData struct {

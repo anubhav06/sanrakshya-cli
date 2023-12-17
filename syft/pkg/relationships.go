@@ -3,7 +3,7 @@ package pkg
 import (
 	"sort"
 
-	"github.com/anchore/syft/syft/artifact"
+	"github.com/anubhav06/sanrakshya-cli/syft/artifact"
 )
 
 func NewRelationships(catalog *Collection) []artifact.Relationship {

@@ -3,8 +3,8 @@ package pkg
 import (
 	"strings"
 
-	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/internal"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
 )
 
 var jenkinsPluginPomPropertiesGroupIDs = []string{

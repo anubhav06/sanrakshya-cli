@@ -10,9 +10,9 @@ import (
 	"github.com/spdx/tools-golang/spdx/v2/v2_2"
 	"github.com/spdx/tools-golang/spdx/v2/v2_3"
 
-	"github.com/anchore/syft/syft/format/common/spdxhelpers"
-	"github.com/anchore/syft/syft/format/internal/spdxutil"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/common/spdxhelpers"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/internal/spdxutil"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 const ID = spdxutil.JSONFormatID

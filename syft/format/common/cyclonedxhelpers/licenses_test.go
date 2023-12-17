@@ -7,8 +7,8 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/anchore/syft/syft/license"
-	"github.com/anchore/syft/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/license"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
 )
 
 func Test_encodeLicense(t *testing.T) {

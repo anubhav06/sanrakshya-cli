@@ -3,8 +3,8 @@ package options
 import (
 	"github.com/hashicorp/go-multierror"
 
-	"github.com/anchore/syft/syft/format/spdxjson"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/spdxjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 type FormatSPDXJSON struct {

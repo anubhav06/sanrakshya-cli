@@ -11,15 +11,15 @@ import (
 
 	"github.com/anchore/clio"
 	"github.com/anchore/fangs"
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/cataloging"
-	"github.com/anchore/syft/syft/pkg/cataloger"
-	golangCataloger "github.com/anchore/syft/syft/pkg/cataloger/golang"
-	javaCataloger "github.com/anchore/syft/syft/pkg/cataloger/java"
-	javascriptCataloger "github.com/anchore/syft/syft/pkg/cataloger/javascript"
-	"github.com/anchore/syft/syft/pkg/cataloger/kernel"
-	pythonCataloger "github.com/anchore/syft/syft/pkg/cataloger/python"
-	"github.com/anchore/syft/syft/source"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/cataloging"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger"
+	golangCataloger "github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/golang"
+	javaCataloger "github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/java"
+	javascriptCataloger "github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/javascript"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/kernel"
+	pythonCataloger "github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/python"
+	"github.com/anubhav06/sanrakshya-cli/syft/source"
 )
 
 type Catalog struct {

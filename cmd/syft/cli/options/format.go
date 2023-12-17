@@ -6,16 +6,16 @@ import (
 	"github.com/hashicorp/go-multierror"
 
 	"github.com/anchore/clio"
-	"github.com/anchore/syft/syft/format/cyclonedxjson"
-	"github.com/anchore/syft/syft/format/cyclonedxxml"
-	"github.com/anchore/syft/syft/format/github"
-	"github.com/anchore/syft/syft/format/spdxjson"
-	"github.com/anchore/syft/syft/format/spdxtagvalue"
-	"github.com/anchore/syft/syft/format/syftjson"
-	"github.com/anchore/syft/syft/format/table"
-	"github.com/anchore/syft/syft/format/template"
-	"github.com/anchore/syft/syft/format/text"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/cyclonedxjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/cyclonedxxml"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/github"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/spdxjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/spdxtagvalue"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/syftjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/table"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/template"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/text"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 var _ clio.PostLoader = (*Format)(nil)

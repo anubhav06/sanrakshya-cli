@@ -5,7 +5,7 @@ import (
 
 	"github.com/scylladb/go-set/strset"
 
-	"github.com/anchore/syft/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
 )
 
 // RpmDBGlob is the glob pattern used to find RPM DB files. Where:

@@ -6,12 +6,12 @@ import (
 	"github.com/bmatcuk/doublestar/v4"
 	"github.com/scylladb/go-set/strset"
 
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/artifact"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/artifact"
 )
 
 // AltRpmDBGlob allows db matches against new locations introduced in fedora:{36,37}
-// See https://github.com/anchore/syft/issues/1077 for larger context
+// See https://github.com/anubhav06/sanrakshya-cli/issues/1077 for larger context
 const AltRpmDBGlob = "**/rpm/{Packages,Packages.db,rpmdb.sqlite}"
 
 var globsForbiddenFromBeingOwned = []string{

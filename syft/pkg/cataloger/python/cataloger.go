@@ -4,8 +4,8 @@ Package python provides a concrete Cataloger implementation relating to packages
 package python
 
 import (
-	"github.com/anchore/syft/syft/pkg"
-	"github.com/anchore/syft/syft/pkg/cataloger/generic"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/generic"
 )
 
 const eggInfoGlob = "**/*.egg-info"

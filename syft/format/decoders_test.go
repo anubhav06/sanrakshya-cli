@@ -8,8 +8,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/anchore/syft/syft/format/syftjson"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/syftjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 func TestIdentify(t *testing.T) {

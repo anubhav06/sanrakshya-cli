@@ -3,8 +3,8 @@ package options
 import (
 	"github.com/hashicorp/go-multierror"
 
-	"github.com/anchore/syft/syft/format/cyclonedxjson"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/cyclonedxjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 type FormatCyclonedxJSON struct {

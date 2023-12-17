@@ -1,7 +1,7 @@
 package options
 
 import (
-	"github.com/anchore/syft/syft/source"
+	"github.com/anubhav06/sanrakshya-cli/syft/source"
 )
 
 type fileMetadata struct {

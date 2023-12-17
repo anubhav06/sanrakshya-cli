@@ -6,9 +6,9 @@ package redhat
 import (
 	"database/sql"
 
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/pkg"
-	"github.com/anchore/syft/syft/pkg/cataloger/generic"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/generic"
 )
 
 // NewDBCataloger returns a new RPM DB cataloger object.

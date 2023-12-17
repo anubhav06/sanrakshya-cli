@@ -11,8 +11,8 @@ import (
 	"github.com/Masterminds/sprig/v3"
 	"github.com/mitchellh/go-homedir"
 
-	"github.com/anchore/syft/syft/format/syftjson"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/syftjson"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 const ID sbom.FormatID = "template"

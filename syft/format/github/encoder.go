@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/anchore/syft/syft/format/github/internal/model"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/github/internal/model"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 const ID sbom.FormatID = "github-json"

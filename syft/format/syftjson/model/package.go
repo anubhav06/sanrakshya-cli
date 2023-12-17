@@ -7,11 +7,11 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/file"
-	"github.com/anchore/syft/syft/internal/packagemetadata"
-	"github.com/anchore/syft/syft/license"
-	"github.com/anchore/syft/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/internal/packagemetadata"
+	"github.com/anubhav06/sanrakshya-cli/syft/license"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
 )
 
 var errUnknownMetadataType = errors.New("unknown metadata type")

@@ -1,6 +1,6 @@
 package cpe
 
-import "github.com/anchore/syft/syft/pkg"
+import "github.com/anubhav06/sanrakshya-cli/syft/pkg"
 
 func candidateVendorsForRuby(p pkg.Package) fieldCandidateSet {
 	metadata, ok := p.Metadata.(pkg.RubyGemspec)

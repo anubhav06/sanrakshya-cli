@@ -3,7 +3,7 @@ package spdxhelpers
 import (
 	"fmt"
 
-	"github.com/anchore/syft/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
 )
 
 // Originator needs to conform to the SPDX spec here:

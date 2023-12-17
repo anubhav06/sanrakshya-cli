@@ -8,9 +8,9 @@ import (
 
 	spdxJson "github.com/spdx/tools-golang/json"
 
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/format/common/spdxhelpers"
-	"github.com/anchore/syft/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/common/spdxhelpers"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
 )
 
 var _ sbom.FormatDecoder = (*decoder)(nil)

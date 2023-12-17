@@ -14,9 +14,9 @@ import (
 	"github.com/iancoleman/strcase"
 	"github.com/invopop/jsonschema"
 
-	"github.com/anchore/syft/internal"
-	syftJsonModel "github.com/anchore/syft/syft/format/syftjson/model"
-	"github.com/anchore/syft/syft/internal/packagemetadata"
+	"github.com/anubhav06/sanrakshya-cli/internal"
+	syftJsonModel "github.com/anubhav06/sanrakshya-cli/syft/format/syftjson/model"
+	"github.com/anubhav06/sanrakshya-cli/syft/internal/packagemetadata"
 )
 
 /*

@@ -4,10 +4,10 @@ import (
 	"strings"
 
 	"github.com/anchore/packageurl-go"
-	"github.com/anchore/syft/syft/file"
-	"github.com/anchore/syft/syft/license"
-	"github.com/anchore/syft/syft/linux"
-	"github.com/anchore/syft/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/license"
+	"github.com/anubhav06/sanrakshya-cli/syft/linux"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
 )
 
 func newPackage(d parsedData, release *linux.Release, dbLocation file.Location) pkg.Package {

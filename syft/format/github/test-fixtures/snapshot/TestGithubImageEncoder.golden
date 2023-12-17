@@ -3,7 +3,7 @@
   "job": {},
   "detector": {
     "name": "syft",
-    "url": "https://github.com/anchore/syft",
+    "url": "https://github.com/anubhav06/sanrakshya-cli",
     "version": "v0.42.0-bogus"
   },
   "metadata": {

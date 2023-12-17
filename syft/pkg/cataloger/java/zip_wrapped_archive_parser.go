@@ -3,18 +3,18 @@ package java
 import (
 	"fmt"
 
-	intFile "github.com/anchore/syft/internal/file"
-	"github.com/anchore/syft/syft/artifact"
-	"github.com/anchore/syft/syft/file"
-	"github.com/anchore/syft/syft/pkg"
-	"github.com/anchore/syft/syft/pkg/cataloger/generic"
+	intFile "github.com/anubhav06/sanrakshya-cli/internal/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/artifact"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/generic"
 )
 
 var genericZipGlobs = []string{
 	"**/*.zip",
 }
 
-// TODO: when the generic archive cataloger is implemented, this should be removed (https://github.com/anchore/syft/issues/246)
+// TODO: when the generic archive cataloger is implemented, this should be removed (https://github.com/anubhav06/sanrakshya-cli/issues/246)
 
 // parseZipWrappedJavaArchive is a parser function for java archive contents contained within arbitrary zip files.
 

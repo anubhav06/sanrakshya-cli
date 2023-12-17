@@ -10,8 +10,8 @@ import (
 	"github.com/wagoodman/go-partybus"
 	"github.com/wagoodman/go-progress"
 
-	"github.com/anchore/syft/syft/event"
-	"github.com/anchore/syft/syft/event/monitor"
+	"github.com/anubhav06/sanrakshya-cli/syft/event"
+	"github.com/anubhav06/sanrakshya-cli/syft/event/monitor"
 )
 
 type ErrBadPayload struct {

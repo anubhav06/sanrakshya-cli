@@ -1,6 +1,6 @@
 package cyclonedxhelpers
 
-import "github.com/anchore/syft/syft/pkg"
+import "github.com/anubhav06/sanrakshya-cli/syft/pkg"
 
 func encodeDescription(p pkg.Package) string {
 	if hasMetadata(p) {

@@ -8,10 +8,10 @@ import (
 	"github.com/mholt/archiver/v3"
 
 	"github.com/anchore/packageurl-go"
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/pkg"
-	"github.com/anchore/syft/syft/sbom"
-	"github.com/anchore/syft/syft/source"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/sbom"
+	"github.com/anubhav06/sanrakshya-cli/syft/source"
 )
 
 // ToGithubModel converts the provided SBOM to a GitHub dependency model
@@ -26,7 +26,7 @@ func ToGithubModel(s *sbom.SBOM) DependencySnapshot {
 		// TODO allow property input to specify the Job, Sha, and Ref
 		Detector: DetectorMetadata{
 			Name:    s.Descriptor.Name,
-			URL:     "https://github.com/anchore/syft",
+			URL:     "https://github.com/anubhav06/sanrakshya-cli",
 			Version: v,
 		},
 		Metadata:  toSnapshotMetadata(s),

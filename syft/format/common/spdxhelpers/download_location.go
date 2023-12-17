@@ -1,6 +1,6 @@
 package spdxhelpers
 
-import "github.com/anchore/syft/syft/pkg"
+import "github.com/anubhav06/sanrakshya-cli/syft/pkg"
 
 const NONE = "NONE"
 const NOASSERTION = "NOASSERTION"

@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/anchore/syft/internal"
+	"github.com/anubhav06/sanrakshya-cli/internal"
 )
 
 var (

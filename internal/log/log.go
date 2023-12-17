@@ -7,7 +7,7 @@ import (
 	"github.com/anchore/go-logger"
 	"github.com/anchore/go-logger/adapter/discard"
 	"github.com/anchore/go-logger/adapter/redact"
-	red "github.com/anchore/syft/internal/redact"
+	red "github.com/anubhav06/sanrakshya-cli/internal/redact"
 )
 
 // log is the singleton used to facilitate logging internally within

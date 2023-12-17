@@ -8,13 +8,13 @@ import (
 	"github.com/dustin/go-humanize"
 
 	stereoscopeFile "github.com/anchore/stereoscope/pkg/file"
-	"github.com/anchore/syft/internal"
-	"github.com/anchore/syft/internal/bus"
-	intFile "github.com/anchore/syft/internal/file"
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/event/monitor"
-	"github.com/anchore/syft/syft/file"
-	intCataloger "github.com/anchore/syft/syft/file/cataloger/internal"
+	"github.com/anubhav06/sanrakshya-cli/internal"
+	"github.com/anubhav06/sanrakshya-cli/internal/bus"
+	intFile "github.com/anubhav06/sanrakshya-cli/internal/file"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/event/monitor"
+	"github.com/anubhav06/sanrakshya-cli/syft/file"
+	intCataloger "github.com/anubhav06/sanrakshya-cli/syft/file/cataloger/internal"
 )
 
 var ErrUndigestableFile = errors.New("undigestable file")

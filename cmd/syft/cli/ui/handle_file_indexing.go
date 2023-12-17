@@ -5,8 +5,8 @@ import (
 	"github.com/wagoodman/go-partybus"
 
 	"github.com/anchore/bubbly/bubbles/taskprogress"
-	"github.com/anchore/syft/internal/log"
-	syftEventParsers "github.com/anchore/syft/syft/event/parsers"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	syftEventParsers "github.com/anubhav06/sanrakshya-cli/syft/event/parsers"
 )
 
 func (m *Handler) handleFileIndexingStarted(e partybus.Event) []tea.Model {

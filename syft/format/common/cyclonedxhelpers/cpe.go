@@ -3,9 +3,9 @@ package cyclonedxhelpers
 import (
 	"github.com/CycloneDX/cyclonedx-go"
 
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/cpe"
-	"github.com/anchore/syft/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/cpe"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
 )
 
 func encodeSingleCPE(p pkg.Package) string {

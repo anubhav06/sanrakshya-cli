@@ -22,13 +22,13 @@ import (
 	"github.com/wagoodman/go-partybus"
 
 	"github.com/anchore/go-logger"
-	"github.com/anchore/syft/internal/bus"
-	"github.com/anchore/syft/internal/log"
-	"github.com/anchore/syft/syft/artifact"
-	"github.com/anchore/syft/syft/linux"
-	"github.com/anchore/syft/syft/pkg"
-	"github.com/anchore/syft/syft/pkg/cataloger"
-	"github.com/anchore/syft/syft/source"
+	"github.com/anubhav06/sanrakshya-cli/internal/bus"
+	"github.com/anubhav06/sanrakshya-cli/internal/log"
+	"github.com/anubhav06/sanrakshya-cli/syft/artifact"
+	"github.com/anubhav06/sanrakshya-cli/syft/linux"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger"
+	"github.com/anubhav06/sanrakshya-cli/syft/source"
 )
 
 // CatalogPackages takes an inventory of packages from the given image from a particular perspective
@@ -76,7 +76,7 @@ func CatalogPackages(src source.Source, cfg cataloger.Config) (*pkg.Collection, 
 
 	// apply exclusions to the package catalog
 	// default config value for this is true
-	// https://github.com/anchore/syft/issues/931
+	// https://github.com/anubhav06/sanrakshya-cli/issues/931
 	if cfg.ExcludeBinaryOverlapByOwnership {
 		for _, r := range relationships {
 			if cataloger.ExcludeBinaryByFileOwnershipOverlap(r, catalog) {

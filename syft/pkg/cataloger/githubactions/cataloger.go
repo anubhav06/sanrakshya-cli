@@ -4,8 +4,8 @@ Package githubactions provides a concrete Cataloger implementation for GitHub Ac
 package githubactions
 
 import (
-	"github.com/anchore/syft/syft/pkg"
-	"github.com/anchore/syft/syft/pkg/cataloger/generic"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg"
+	"github.com/anubhav06/sanrakshya-cli/syft/pkg/cataloger/generic"
 )
 
 // NewActionUsageCataloger returns GitHub Actions used within workflows and composite actions.

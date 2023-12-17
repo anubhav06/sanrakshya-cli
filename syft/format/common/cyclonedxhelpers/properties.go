@@ -5,7 +5,7 @@ import (
 
 	"github.com/CycloneDX/cyclonedx-go"
 
-	"github.com/anchore/syft/syft/format/common"
+	"github.com/anubhav06/sanrakshya-cli/syft/format/common"
 )
 
 var (
