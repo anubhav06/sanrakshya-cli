@@ -80,13 +80,15 @@ func create(id clio.Identification, out io.Writer) (clio.Application, *cobra.Com
 	// rootCmd is currently an alias for the packages command
 	rootCmd := commands.Root(app, packagesCmd)
 
+	rootCmd.CompletionOptions.DisableDefaultCmd = true
+
 	// add sub-commands
 	rootCmd.AddCommand(
 		packagesCmd,
-		commands.Attest(app),
+		// commands.Attest(app),
 		// commands.Convert(app),
 		commands.Submit(app),
-		clio.VersionCommand(id),
+		// clio.VersionCommand(id),
 	)
 
 	// explicitly set Cobra output to the real stdout to write things like errors and help
