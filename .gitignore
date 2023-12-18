@@ -22,3 +22,4 @@ go.work
 
 cmd/sanrakshya/sanrakshya
 cmd/sanrakshya/default.json
+cmd/sanrakshya/creds.json

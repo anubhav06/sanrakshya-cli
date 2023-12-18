@@ -88,6 +88,7 @@ func create(id clio.Identification, out io.Writer) (clio.Application, *cobra.Com
 		// commands.Attest(app),
 		// commands.Convert(app),
 		commands.Submit(app),
+		commands.Login(app),
 		// clio.VersionCommand(id),
 	)
 

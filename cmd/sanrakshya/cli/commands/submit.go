@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"path/filepath"
 
 	"github.com/spf13/cobra"
 
@@ -80,17 +81,39 @@ func validateArg(cmd *cobra.Command, args []string, error string) error {
 	return cobra.MaximumNArgs(1)(cmd, args)
 }
 
-// export ACCOUNT_ID=your_account_id
-// export SECRET_KEY=your_secret_key
-func getCredentialsFromEnv() (string, string) {
-	accountID := os.Getenv("ACCOUNT_ID")
-	secretKey := os.Getenv("SECRET_KEY")
+func getCredentialsFromConfig() (string, string) {
+	// Get the installation location of the CLI tool
+	exe, err := os.Executable()
+	if err != nil {
+		panic(err)
+	}
+	installDir := filepath.Dir(exe)
 
-	return accountID, secretKey
+	// The file where the credentials are stored
+	credsFile := filepath.Join(installDir, "creds.json")
+
+	// Read the credentials from the file
+	credsBytes, err := ioutil.ReadFile(credsFile)
+	if err != nil {
+		panic(err)
+	}
+
+	// Parse the credentials
+	var creds struct {
+		AccountID string `json:"account_id"`
+		SecretKey string `json:"secret_key"`
+	}
+	err = json.Unmarshal(credsBytes, &creds)
+	if err != nil {
+		panic(err)
+	}
+
+	return creds.AccountID, creds.SecretKey
+
 }
 
 func runSubmit(id clio.Identification, opts *submitOptions, userInput string) error {
-	accountID, secretKey := getCredentialsFromEnv()
+	accountID, secretKey := getCredentialsFromConfig()
 	fmt.Println("accountID: ", accountID, "SecretKey: ", secretKey)
 
 	// Read the SBOM file
