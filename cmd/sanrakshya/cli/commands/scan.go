@@ -19,25 +19,25 @@ import (
 )
 
 const (
-	packagesExample = `  {{.appName}} {{.command}} alpine:latest                                a summary of discovered packages
+	scanExample = `  {{.appName}} {{.command}} alpine:latest                                a summary of discovered packages
   {{.appName}} {{.command}} alpine:latest -o spdx-json                   show a SPDX 2.3 JSON formatted SBOM
 
   Supports the following image sources:
     {{.appName}} {{.command}} yourrepo/yourimage:tag     defaults to using images from a Docker daemon, otherwise registry.
     {{.appName}} {{.command}} path/to/a/file/or/dir      any local filesystem path (directory or file)
 `
-	packagesHelp = packagesExample
+	scanHelp = scanExample
 )
 
-type packagesOptions struct {
+type scanOptions struct {
 	options.Config      `yaml:",inline" mapstructure:",squash"`
 	options.Output      `yaml:",inline" mapstructure:",squash"`
 	options.UpdateCheck `yaml:",inline" mapstructure:",squash"`
 	options.Catalog     `yaml:",inline" mapstructure:",squash"`
 }
 
-func defaultPackagesOptions() *packagesOptions {
-	return &packagesOptions{
+func defaultScanOptions() *scanOptions {
+	return &scanOptions{
 		Output:      options.DefaultOutput(),
 		UpdateCheck: options.DefaultUpdateCheck(),
 		Catalog:     options.DefaultCatalog(),
@@ -45,30 +45,30 @@ func defaultPackagesOptions() *packagesOptions {
 }
 
 //nolint:dupl
-func Packages(app clio.Application) *cobra.Command {
+func Scan(app clio.Application) *cobra.Command {
 	id := app.ID()
 
-	opts := defaultPackagesOptions()
+	opts := defaultScanOptions()
 
 	return app.SetupCommand(&cobra.Command{
-		Use:   "packages [SOURCE]",
-		Short: "Generate a package SBOM",
+		Use:   "scan [SOURCE]",
+		Short: "Scan the source to generate a SBOM",
 		Long:  "Generate a packaged-based Software Bill Of Materials (SBOM) from container images and filesystems",
-		Example: internal.Tprintf(packagesHelp, map[string]interface{}{
+		Example: internal.Tprintf(scanHelp, map[string]interface{}{
 			"appName": id.Name,
-			"command": "packages",
+			"command": "scan",
 		}),
-		Args: validatePackagesArgs,
+		Args: validateScanArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			// restoreStdout := ui.CaptureStdoutToTraceLog()
 			// defer restoreStdout()
 
-			return runPackages(id, opts, args[0])
+			return runScan(id, opts, args[0])
 		},
 	}, opts)
 }
 
-func validatePackagesArgs(cmd *cobra.Command, args []string) error {
+func validateScanArgs(cmd *cobra.Command, args []string) error {
 	return validateArgs(cmd, args, "an image/directory argument is required")
 }
 
@@ -85,7 +85,7 @@ func validateArgs(cmd *cobra.Command, args []string, error string) error {
 }
 
 // nolint:funlen
-func runPackages(id clio.Identification, opts *packagesOptions, userInput string) error {
+func runScan(id clio.Identification, opts *scanOptions, userInput string) error {
 	writer, err := opts.SBOMWriter()
 	if err != nil {
 		return err
