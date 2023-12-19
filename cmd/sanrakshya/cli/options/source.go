@@ -1,8 +1,6 @@
 package options
 
 type sourceCfg struct {
-	Name    string     `json:"name" yaml:"name" mapstructure:"name"`
-	Version string     `json:"version" yaml:"version" mapstructure:"version"`
 	File    fileSource `json:"file" yaml:"file" mapstructure:"file"`
 }
 

@@ -2,7 +2,6 @@ package options
 
 import (
 	"github.com/anchore/clio"
-	"github.com/anchore/fangs"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/sbom"
 )
 
@@ -22,10 +21,6 @@ func (o *OutputFile) AddFlags(flags clio.FlagSet) {
 		flags.StringVarP(&o.File, "file", "",
 			"file to write the default report output to (default is STDOUT)")
 
-		if pfp, ok := flags.(fangs.PFlagSetProvider); ok {
-			flagSet := pfp.PFlagSet()
-			flagSet.Lookup("file").Deprecated = "use: output"
-		}
 	}
 }
 

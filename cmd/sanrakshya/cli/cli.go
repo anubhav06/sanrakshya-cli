@@ -34,8 +34,6 @@ func Command(id clio.Identification) *cobra.Command {
 
 func create(id clio.Identification, out io.Writer) (clio.Application, *cobra.Command) {
 	clioCfg := clio.NewSetupConfig(id).
-		WithGlobalConfigFlag().   // add persistent -c <path> for reading an application config from
-		WithGlobalLoggingFlags(). // add persistent -v and -q flags tied to the logging config
 		WithUIConstructor(
 			// select a UI based on the logging configuration and state of stdin (if stdin is a tty)
 			func(cfg clio.Config) ([]clio.UI, error) {
@@ -85,11 +83,8 @@ func create(id clio.Identification, out io.Writer) (clio.Application, *cobra.Com
 	// add sub-commands
 	rootCmd.AddCommand(
 		packagesCmd,
-		// commands.Attest(app),
-		// commands.Convert(app),
 		commands.Submit(app),
 		commands.Login(app),
-		// clio.VersionCommand(id),
 	)
 
 	// explicitly set Cobra output to the real stdout to write things like errors and help

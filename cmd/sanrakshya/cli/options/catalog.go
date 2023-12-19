@@ -10,8 +10,6 @@ import (
 	"github.com/scylladb/go-set/strset"
 
 	"github.com/anchore/clio"
-	"github.com/anchore/fangs"
-	"github.com/anubhav06/sanrakshya-cli/internal/log"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/cataloging"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/pkg/cataloger"
 	golangCataloger "github.com/anubhav06/sanrakshya-cli/sanrakshya/pkg/cataloger/golang"
@@ -23,7 +21,6 @@ import (
 )
 
 type Catalog struct {
-	Catalogers                      []string     `yaml:"catalogers" json:"catalogers" mapstructure:"catalogers"`
 	Package                         pkg          `yaml:"package" json:"package" mapstructure:"package"`
 	Golang                          golang       `yaml:"golang" json:"golang" mapstructure:"golang"`
 	Java                            java         `yaml:"java" json:"java" mapstructure:"java"`
@@ -33,13 +30,10 @@ type Catalog struct {
 	FileMetadata                    fileMetadata `yaml:"file-metadata" json:"file-metadata" mapstructure:"file-metadata"`
 	FileContents                    fileContents `yaml:"file-contents" json:"file-contents" mapstructure:"file-contents"`
 	Registry                        registry     `yaml:"registry" json:"registry" mapstructure:"registry"`
-	Exclusions                      []string     `yaml:"exclude" json:"exclude" mapstructure:"exclude"`
-	Platform                        string       `yaml:"platform" json:"platform" mapstructure:"platform"`
 	Name                            string       `yaml:"name" json:"name" mapstructure:"name"`
 	Source                          sourceCfg    `yaml:"source" json:"source" mapstructure:"source"`
 	Parallelism                     int          `yaml:"parallelism" json:"parallelism" mapstructure:"parallelism"`                                                                         // the number of catalog workers to run in parallel
 	DefaultImagePullSource          string       `yaml:"default-image-pull-source" json:"default-image-pull-source" mapstructure:"default-image-pull-source"`                               // specify default image pull source
-	BasePath                        string       `yaml:"base-path" json:"base-path" mapstructure:"base-path"`                                                                               // specify base path for all file paths
 	ExcludeBinaryOverlapByOwnership bool         `yaml:"exclude-binary-overlap-by-ownership" json:"exclude-binary-overlap-by-ownership" mapstructure:"exclude-binary-overlap-by-ownership"` // exclude synthetic binary packages owned by os package files
 }
 
@@ -68,53 +62,15 @@ func (cfg *Catalog) AddFlags(flags clio.FlagSet) {
 	flags.StringVarP(&cfg.Package.Cataloger.Scope, "scope", "s",
 		fmt.Sprintf("selection of layers to catalog, options=%v", validScopeValues))
 
-	flags.StringVarP(&cfg.Platform, "platform", "",
-		"an optional platform specifier for container image sources (e.g. 'linux/arm64', 'linux/arm64/v8', 'arm64', 'linux')")
-
-	flags.StringArrayVarP(&cfg.Exclusions, "exclude", "",
-		"exclude paths from being scanned using a glob expression")
-
-	flags.StringArrayVarP(&cfg.Catalogers, "catalogers", "",
-		"enable one or more package catalogers")
-
-	flags.StringVarP(&cfg.Source.Name, "name", "",
-		"set the name of the target being analyzed")
-
-	if pfp, ok := flags.(fangs.PFlagSetProvider); ok {
-		flagSet := pfp.PFlagSet()
-		flagSet.Lookup("name").Deprecated = "use: source-name"
-	}
-
-	flags.StringVarP(&cfg.Source.Name, "source-name", "",
-		"set the name of the target being analyzed")
-
-	flags.StringVarP(&cfg.Source.Version, "source-version", "",
-		"set the version of the target being analyzed")
-
-	flags.StringVarP(&cfg.BasePath, "base-path", "",
-		"base directory for scanning, no links will be followed above this directory, and all paths will be reported relative to this directory")
 }
 
 func (cfg *Catalog) PostLoad() error {
 	// parse options on this struct
 	var catalogers []string
-	for _, c := range cfg.Catalogers {
-		for _, f := range strings.Split(c, ",") {
-			catalogers = append(catalogers, strings.TrimSpace(f))
-		}
-	}
 	sort.Strings(catalogers)
-	cfg.Catalogers = catalogers
 
 	if err := checkDefaultSourceValues(cfg.DefaultImagePullSource); err != nil {
 		return err
-	}
-
-	if cfg.Name != "" {
-		log.Warnf("name parameter is deprecated. please use: source-name. name will be removed in a future version")
-		if cfg.Source.Name == "" {
-			cfg.Source.Name = cfg.Name
-		}
 	}
 
 	return nil
@@ -127,7 +83,6 @@ func (cfg Catalog) ToCatalogerConfig() cataloger.Config {
 			IncludeUnindexedArchives: cfg.Package.SearchUnindexedArchives,
 			Scope:                    cfg.Package.Cataloger.GetScope(),
 		},
-		Catalogers:  cfg.Catalogers,
 		Parallelism: cfg.Parallelism,
 		Golang: golangCataloger.DefaultCatalogerConfig().
 			WithSearchLocalModCacheLicenses(cfg.Golang.SearchLocalModCacheLicenses).

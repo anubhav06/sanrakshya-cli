@@ -7,7 +7,6 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/anchore/clio"
-	"github.com/anchore/stereoscope/pkg/image"
 	"github.com/anubhav06/sanrakshya-cli/cmd/sanrakshya/cli/eventloop"
 	"github.com/anubhav06/sanrakshya-cli/cmd/sanrakshya/cli/options"
 	"github.com/anubhav06/sanrakshya-cli/internal"
@@ -139,15 +138,6 @@ func getSource(opts *options.Catalog, userInput string, filters ...func(*source.
 		}
 	}
 
-	var platform *image.Platform
-
-	if opts.Platform != "" {
-		platform, err = image.NewPlatform(opts.Platform)
-		if err != nil {
-			return nil, fmt.Errorf("invalid platform: %w", err)
-		}
-	}
-
 	hashers, err := file.Hashers(opts.Source.File.Digests...)
 	if err != nil {
 		return nil, fmt.Errorf("invalid hash: %w", err)
@@ -155,17 +145,8 @@ func getSource(opts *options.Catalog, userInput string, filters ...func(*source.
 
 	src, err := detection.NewSource(
 		source.DetectionSourceConfig{
-			Alias: source.Alias{
-				Name:    opts.Source.Name,
-				Version: opts.Source.Version,
-			},
-			RegistryOptions: opts.Registry.ToOptions(),
-			Platform:        platform,
-			Exclude: source.ExcludeConfig{
-				Paths: opts.Exclusions,
-			},
+			RegistryOptions:  opts.Registry.ToOptions(),
 			DigestAlgorithms: hashers,
-			BasePath:         opts.BasePath,
 		},
 	)
 
