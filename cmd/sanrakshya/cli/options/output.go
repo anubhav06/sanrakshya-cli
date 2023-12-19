@@ -10,14 +10,9 @@ import (
 
 	"github.com/anchore/clio"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/cyclonedxjson"
-	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/cyclonedxxml"
-	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/github"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/sanrakshyajson"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/spdxjson"
-	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/spdxtagvalue"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/table"
-	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/template"
-	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/text"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/sbom"
 )
 
@@ -67,7 +62,7 @@ func (o *Output) AddFlags(flags clio.FlagSet) {
 	sort.Strings(names)
 
 	flags.StringArrayVarP(&o.Outputs, "output", "o",
-		fmt.Sprintf("report output format (<format>=<file> to output to a file), formats=%v", names))
+		fmt.Sprintf("report output format, formats=%v", names))
 }
 
 func (o Output) SBOMWriter() (sbom.Writer, error) {
@@ -75,12 +70,6 @@ func (o Output) SBOMWriter() (sbom.Writer, error) {
 
 	if len(o.Outputs) > 1 && !o.AllowMultipleOutputs {
 		return nil, fmt.Errorf("only one output format is allowed (given %d: %s)", len(o.Outputs), names)
-	}
-
-	usesTemplateOutput := names.Has(string(template.ID))
-
-	if usesTemplateOutput && o.Format.Template.Path == "" {
-		return nil, fmt.Errorf(`must specify path to template file when using "template" output format`)
 	}
 
 	encoders, err := o.Encoders()
@@ -113,15 +102,10 @@ func supportedIDs() []sbom.FormatID {
 	encs := []sbom.FormatID{
 		// encoders that support a single version
 		sanrakshyajson.ID,
-		github.ID,
 		table.ID,
-		text.ID,
-		template.ID,
 
 		// encoders that support multiple versions
-		cyclonedxxml.ID,
 		cyclonedxjson.ID,
-		spdxtagvalue.ID,
 		spdxjson.ID,
 	}
 

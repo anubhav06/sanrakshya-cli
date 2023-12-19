@@ -18,7 +18,7 @@ import (
 const (
 	loginExample = `
   Login to the Sanrakshya Web App. Stores the credentials in the environment variables:
-  sanrakshya login
+  sanrakshya login --username <username> --password <password>
   `
 )
 

@@ -5,10 +5,8 @@ import (
 	"io"
 
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/cyclonedxjson"
-	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/cyclonedxxml"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/sanrakshyajson"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/spdxjson"
-	"github.com/anubhav06/sanrakshya-cli/sanrakshya/format/spdxtagvalue"
 	"github.com/anubhav06/sanrakshya-cli/sanrakshya/sbom"
 )
 
@@ -24,9 +22,7 @@ func init() {
 func Decoders() []sbom.FormatDecoder {
 	return []sbom.FormatDecoder{
 		sanrakshyajson.NewFormatDecoder(),
-		cyclonedxxml.NewFormatDecoder(),
 		cyclonedxjson.NewFormatDecoder(),
-		spdxtagvalue.NewFormatDecoder(),
 		spdxjson.NewFormatDecoder(),
 	}
 }
